@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.command.MovieMapper">
+	<select id="movieList"
+	resultType = "co.micol.prj.command.MovieVO">
+	SELECT *
+	FROM movie
+	
+	</select>
+	<select id="movieSelect"
+		parameterType="co.micol.prj.command.MovieVO"
+		resultType="co.micol.prj.command.MovieVO">
+		SELECT * 
+		FROM movie
+		WHERE title = #{title}
+	</select>
+	
+	<insert id="movieInsert"
+		parameterType="co.micol.prj.command.MovieVO">
+		INSERT INTO movie
+		values(#{title}, #{director}, #{grade}, #{genre}, #{summary} )
+	</insert>
+	
+	<update id="movieUpdate"
+		parameterType="co.micol.prj.command.MovieVO">
+		UPDATE movie set director = #{director}, grade = #{grade},
+		summary = #{summary}
+		WHERE title = #{title}	
+	</update>
+	<delete id="movieDelete"
+		parameterType="co.micol.prj.command.MovieVO">
+		DELETE FROM movie 
+		WHERE title = #{title}
+	</delete>
+
+</mapper>
