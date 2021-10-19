@@ -17,5 +17,9 @@
   </environments>
   <mappers>
     <mapper resource="co/micol/prj/theater/Movie-Map.xml"/>
+    <mapper resource="co/micol/prj/oneschedualImpl/OneTheater-Map.xml"/>
+    <mapper resource="co/micol/prj/twoschedualImpl/TwoTheater-Map.xml"/>
+    <mapper resource="co/micol/prj/thirdschedualImpl/Third-Map.xml"/>
+    <mapper resource="co/micol/prj/command/Admin-Map.xml"/>
   </mappers>
 </configuration>

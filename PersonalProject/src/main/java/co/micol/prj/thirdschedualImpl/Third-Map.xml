@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.schedual.TheaterThirdMapper">
+
+<select id="theaterThirdList"
+	resultType = "co.micol.prj.schedual.SchedualVO">
+	SELECT *
+	FROM thirdtheaters
+	ORDER BY time ASC
+	
+	</select>
+	
+	<select id="theaterThirdSelect"
+		parameterType="co.micol.prj.schedual.SchedualVO"
+		resultType="co.micol.prj.schedual.SchedualVO">
+		SELECT * 
+		FROM thirdtheaters
+		WHERE time = #{time}
+	</select>
+	
+	<insert id="theaterThirdInsert"
+		parameterType="co.micol.prj.schedual.SchedualVO">
+		INSERT INTO thirdtheaters
+		values(#{title}, #{grade}, #{genre}, #{summary}, #{time})
+	</insert>
+	
+	<update id="theaterThirdUpdate"
+		parameterType="co.micol.prj.schedual.SchedualVO">
+		UPDATE thirdtheaters set title = #{title} ,director = #{director}, grade = #{grade},
+		summary = #{summary}, time = #{time}
+		where time = #{time}
+		
+	</update>
+	
+	<delete id="theaterThirdDelete"
+		parameterType="co.micol.prj.schedual.SchedualVO">
+		DELETE FROM thirdtheaters
+		WHERE time = #{time}
+	</delete>
+
+</mapper>

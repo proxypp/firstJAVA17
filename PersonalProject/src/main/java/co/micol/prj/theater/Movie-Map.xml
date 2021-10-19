@@ -23,7 +23,7 @@
 	
 	<update id="movieUpdate"
 		parameterType="co.micol.prj.command.MovieVO">
-		UPDATE movie set director = #{director}, grade = #{grade},
+		UPDATE movie set director = #{director}, grade = #{grade}, genre = #{genre},
 		summary = #{summary}
 		WHERE title = #{title}	
 	</update>

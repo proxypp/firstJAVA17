@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.command.AdminMapper">
+
+<select id="adminSelect" resultType="co.micol.prj.command.AdminVO"
+                       parameterType="co.micol.prj.command.AdminVO">
+      select * from admin where id = #{id}
+      
+      <if test="password != null and password !=''">
+         and password = #{password}
+      </if>
+	</select>
+</mapper>
