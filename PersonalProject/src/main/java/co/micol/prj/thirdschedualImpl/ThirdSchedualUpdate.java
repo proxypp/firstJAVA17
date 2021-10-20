@@ -26,7 +26,7 @@ public class ThirdSchedualUpdate implements Command{
 		System.out.println("수정 하고싶은 시간대를 선택하세요.");
 		System.out.println("1. 09:30 2.12:00 3.14:30 4.17:00 5.19:30 6.22:00 7.24:30");
 		vo.setTime(sc.nextLine());
-		int n = theaterService.theaterThirdInsert(vo);
+		int n = theaterService.theaterThirdUpdate(vo);
 		if (n != 0) {
 			System.out.println("정상적으로 등록되었습니다.");
 		} else {

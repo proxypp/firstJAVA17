@@ -20,6 +20,9 @@
     <mapper resource="co/micol/prj/oneschedualImpl/OneTheater-Map.xml"/>
     <mapper resource="co/micol/prj/twoschedualImpl/TwoTheater-Map.xml"/>
     <mapper resource="co/micol/prj/thirdschedualImpl/Third-Map.xml"/>
-    <mapper resource="co/micol/prj/command/Admin-Map.xml"/>
+    <mapper resource="co/micol/prj/memberImpl/member-map.xml"/>
+    <mapper resource="co/micol/prj/reserveImpl/reserve-map.xml"/>
+    <mapper resource="co/micol/prj/reserveTwoImpl/reserveTwo-map.xml"/>
+   <mapper resource="co/micol/prj/reserveThirdImpl/reserveThird-map.xml"/>
   </mappers>
 </configuration>

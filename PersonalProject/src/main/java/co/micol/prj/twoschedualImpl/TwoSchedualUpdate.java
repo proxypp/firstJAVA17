@@ -26,7 +26,7 @@ public class TwoSchedualUpdate implements Command {
 		vo.setGenre(sc.nextLine());
 		System.out.println("영화 내용을 입력하세요.***");
 		vo.setSummary(sc.nextLine());
-		int n = theaterTwoService.theaterTwoInsert(vo);
+		int n = theaterTwoService.theaterTwoUpdate(vo);
 		if (n != 0) {
 			System.out.println("정상적으로 등록되었습니다.");
 		} else {

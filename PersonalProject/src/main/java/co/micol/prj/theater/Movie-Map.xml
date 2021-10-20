@@ -5,6 +5,7 @@
 	resultType = "co.micol.prj.command.MovieVO">
 	SELECT *
 	FROM movie
+	order by theater asc
 	
 	</select>
 	<select id="movieSelect"
@@ -18,13 +19,13 @@
 	<insert id="movieInsert"
 		parameterType="co.micol.prj.command.MovieVO">
 		INSERT INTO movie
-		values(#{title}, #{director}, #{grade}, #{genre}, #{summary} )
+		values(#{title}, #{director}, #{grade}, #{genre}, #{summary}, #{theater} )
 	</insert>
 	
 	<update id="movieUpdate"
 		parameterType="co.micol.prj.command.MovieVO">
 		UPDATE movie set director = #{director}, grade = #{grade}, genre = #{genre},
-		summary = #{summary}
+		summary = #{summary}, theater= #{theater}
 		WHERE title = #{title}	
 	</update>
 	<delete id="movieDelete"

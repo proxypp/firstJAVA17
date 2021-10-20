@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.reserve.ReserveThirdMapper">
+	
+	<select id="reserveThirdList"
+	resultType = "co.micol.prj.reserve.ReserveVO">
+	SELECT *
+	FROM thirdreserve
+	order by time asc
+	</select>
+	
+	<select id="reserveThirdSelect"
+		parameterType="co.micol.prj.reserve.ReserveVO"
+		resultType="co.micol.prj.reserve.ReserveVO">
+		SELECT * 
+		FROM thirdreserve
+		WHERE time = #{time}
+	</select>
+	
+	<insert id="reserveThirdInsert"
+		parameterType="co.micol.prj.reserve.ReserveVO">
+		INSERT INTO thirdreserve
+		values(#{title}, #{time}, #{seat1}, #{seat2}, #{seat3}, #{seat4}, #{seat5},#{seat6},#{seat7},#{seat8},#{seat9},#{seat10} )
+	</insert>
+	<update id="reserveThirdUpdate"
+		parameterType="co.micol.prj.reserve.ReserveVO">
+		UPDATE thirdreserve set title = #{title}, seat1 = #{seat1}, seat2 = #{seat2},
+		seat3 = #{seat3}, seat4= #{seat4}, seat5 = #{seat5}, seat6 = #{seat6}, seat7 = #{seat7}, seat8 = #{seat8}, seat9 = #{seat9}, seat10 = #{seat10}
+		WHERE time = #{time}
+	</update>
+	
+	<delete id="reserveThirdDelete"
+		parameterType="co.micol.prj.reserve.ReserveVO">
+		DELETE FROM thirdreserve
+		WHERE time = #{time}
+	</delete>
+	
+</mapper>

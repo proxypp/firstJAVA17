@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.micol.prj.member.MemberMapper">
+	<select id = "memberSelectList"
+		resultType = "co.micol.prj.member.MemberVO">
+		SELECT id, name, tel, point, author
+		FROM member
+		ORDER BY author asc
+	</select>
+	
+	<select id="memberSelect"
+		parameterType="co.micol.prj.member.MemberVO"
+		resultType="co.micol.prj.member.MemberVO">
+		SELECT id, name, tel, point, author
+		FROM member
+		WHERE id = #{id}
+	</select>
+	
+	<select id="loginCheck"
+		resultType="co.micol.prj.member.MemberVO">
+		SELECT *
+		FROM member
+		WHERE id = #{id} and password = #{password}
+	</select>
+	
+	<insert id="memberInsert"
+	parameterType="co.micol.prj.member.MemberVO">
+		INSERT INTO MEMBER(id, name, password, tel, point)
+		VALUES (#{id}, #{name}, #{password}, #{tel}, #{point})
+	</insert>
+	
+	<update id="memberUpdate"
+		parameterType = "co.micol.prj.member.MemberVO">
+		UPDATE member set name = #{name}, password = #{password},
+		tel = #{tel}
+		WHERE id = #{id}	
+	</update>
+		
+	<delete id="memberDelete"
+		parameterType = "co.micol.prj.member.MemberVO">
+		DELETE FROM member WHERE id = #{id}
+	</delete>
+
+</mapper>

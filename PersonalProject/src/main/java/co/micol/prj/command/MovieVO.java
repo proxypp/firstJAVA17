@@ -11,13 +11,15 @@ public class MovieVO {
 	private int grade;
 	private String genre;
 	private String summary;
+	private String theater;
 	
 	public void toListString() { //전체목록 보기
 		System.out.print(title + " : ");
 		System.out.print(director + " : ");
 		System.out.print(grade + " : ");
 		System.out.print(genre + " : ");
-		System.out.println(summary + " : ");
+		System.out.print(summary + " : ");
+		System.out.println(theater + " : ");
 	}
 	
 	public String toString() { //개별보기
@@ -26,6 +28,7 @@ public class MovieVO {
 		System.out.println("등 급 : " + grade);
 		System.out.println("작성일자 : " + genre);
 		System.out.println("요 약 : " + summary);
+		System.out.println("상영관 : " + theater);
 		return null;
 	}
 }

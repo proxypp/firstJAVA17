@@ -8,11 +8,12 @@ import co.micol.prj.schedual.SchedualVO;
 import co.micol.prj.schedual.TheaterTwoService;
 
 public class TwoSchedualList implements Command {
-	TheaterTwoService theaterTwoService = new TwoSchedualImpl();
+	TheaterTwoService theaterTwoService;
 
 	@Override
 	public void execute() {
 		List<SchedualVO> vo = new ArrayList<SchedualVO>();
+		theaterTwoService = new TwoSchedualImpl();
 		vo = theaterTwoService.theaterTwoList();
 		System.out.println();
 		System.out.println("****2 상영관 목록 표******");

@@ -25,7 +25,7 @@
 	
 	<update id="theaterTwoUpdate"
 		parameterType="co.micol.prj.schedual.SchedualVO">
-		UPDATE twotheaters set title = #{title} ,director = #{director}, grade = #{grade},
+		UPDATE twotheaters set title = #{title} ,genre = #{genre}, grade = #{grade},
 		summary = #{summary}
 		WHERE time = #{time}	
 	</update>

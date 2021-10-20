@@ -25,6 +25,8 @@ public class MovieUpdate implements Command {
 		vo.setGenre(sc.nextLine());
 		System.out.println("수정할 내용을 입력하세요");
 		vo.setSummary(sc.nextLine());
+		System.out.println("수정할 상영관을 입력하세요");
+		vo.setTheater(sc.nextLine());
 		int n = movieService.movieUpdate(vo);
 		if (n != 0) {
 			System.out.println("정상적으로 정보가 변경되었습니다.");

@@ -9,11 +9,12 @@ import co.micol.prj.schedual.SchedualVO;
 import co.micol.prj.schedual.TheaterService;
 
 public class OneSchedualList implements Command{
-	TheaterService theaterService = new OneSchedualImpl();
+	TheaterService theaterService;
 
 	@Override
 	public void execute() {
 		List<SchedualVO> vo = new ArrayList<SchedualVO>();
+		theaterService = new OneSchedualImpl();
 		vo = theaterService.theaterList();
 		System.out.println();
 		System.out.println("****1 상영관 목록 표******");

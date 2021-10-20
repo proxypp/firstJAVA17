@@ -8,10 +8,11 @@ import co.micol.prj.command.MovieMgr;
 import co.micol.prj.command.MovieVO;
 
 public class MovieList implements Command {
-	MovieMgr movieService = new MovieMgrImpl();
+	MovieMgr movieService;
 	@Override
 	public void execute() {
 		List<MovieVO> movies = new ArrayList<MovieVO>();
+		movieService = new MovieMgrImpl();
 		movies = movieService.movieList();
 		System.out.println();
 		System.out.println("**** 영화 목록 표 *****");

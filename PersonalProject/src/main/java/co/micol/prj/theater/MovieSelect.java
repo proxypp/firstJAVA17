@@ -19,6 +19,8 @@ public class MovieSelect implements Command {
 		
 		if (movie != null) {
 			movie.toString();
+		}else {
+			System.out.println("그런 영화는 없습니다.");
 		}
 		System.out.println("**********************");
 	}

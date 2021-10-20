@@ -24,6 +24,8 @@ public class MovieInsert implements Command {
 		vo.setGenre(sc.nextLine());
 		System.out.println("영화 내용을 입력하세요.***");
 		vo.setSummary(sc.nextLine());
+		System.out.println("상영관을 입력해주세요.");
+		vo.setTheater(sc.nextLine());
 		int n = movieService.movieInsert(vo);
 		if (n != 0) {
 			System.out.println("정상적으로 등록되었습니다.");

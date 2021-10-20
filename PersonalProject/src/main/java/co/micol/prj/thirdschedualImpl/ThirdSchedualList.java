@@ -10,10 +10,11 @@ import co.micol.prj.schedual.TheaterThirdService;
 
 public class ThirdSchedualList implements Command {
 	
-	TheaterThirdService theaterService = new ThirdSchedualImpl();
+	TheaterThirdService theaterService;
 	@Override
 	public void execute() {
 		List<SchedualVO> vo = new ArrayList<SchedualVO>();
+		theaterService = new ThirdSchedualImpl();
 		vo = theaterService.theaterThirdList();
 		System.out.println();
 		System.out.println("****3 상영관 목록 표******");
